@@ -301,3 +301,88 @@
     "ogDescription": "Discover NGOs, support meaningful causes, and make transparent donations."
   }
 }
+{
+  "PlatformAdmin": {
+    "title": "Platform Administration",
+    "description": "Manage NGO applications and approvals.",
+    "applications": "Applications",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "revoked": "Revoked",
+    "approve": "Approve",
+    "reject": "Reject",
+    "revoke": "Revoke",
+    "refresh": "Refresh",
+    "loading": "Loading applications...",
+    "empty": "No applications found.",
+    "emptyPending": "No pending applications.",
+    "error": "Failed to load applications.",
+    "applicant": "Applicant",
+    "organization": "Organization",
+    "email": "Email",
+    "submittedAt": "Submitted",
+    "status": "Status",
+    "actions": "Actions",
+    "approveDialog": {
+      "title": "Approve application",
+      "description": "Are you sure you want to approve this application?",
+      "confirm": "Approve application",
+      "cancel": "Cancel"
+    },
+    "rejectDialog": {
+      "title": "Reject application",
+      "description": "Are you sure you want to reject this application?",
+      "confirm": "Reject application",
+      "cancel": "Cancel"
+    },
+    "revokeDialog": {
+      "title": "Revoke approval",
+      "description": "Are you sure you want to revoke this organization's approval?",
+      "confirm": "Revoke approval",
+      "cancel": "Cancel"
+    },
+    "success": {
+      "approved": "Application approved successfully.",
+      "rejected": "Application rejected successfully.",
+      "revoked": "Approval revoked successfully."
+    },
+    "failure": {
+      "approve": "Failed to approve application.",
+      "reject": "Failed to reject application.",
+      "revoke": "Failed to revoke approval."
+    }
+  }
+}
+{
+  "NgoAdmin": {
+    "withdrawals": {
+      "title": "Withdrawals",
+      "loading": "Loading withdrawals...",
+      "empty": "No withdrawals yet.",
+      "error": "Failed to load withdrawals.",
+      "status": "Status",
+      "amount": "Amount",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "embed": {
+      "title": "Embed your stream",
+      "description": "Use the snippet below to embed your donation stream.",
+      "instructions": "Copy and paste this code into your website.",
+      "copy": "Copy snippet",
+      "copied": "Snippet copied!",
+      "copyError": "Failed to copy snippet."
+    },
+    "streams": {
+      "title": "Your streams",
+      "loading": "Loading streams...",
+      "empty": "You haven't created any streams yet.",
+      "error": "Failed to load streams.",
+      "status": "Status",
+      "amount": "Amount",
+      "recipient": "Recipient",
+      "actions": "Actions"
+    }
+  }
+}

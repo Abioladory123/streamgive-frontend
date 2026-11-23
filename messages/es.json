@@ -301,3 +301,88 @@
     "ogDescription": "Descubre ONG, apoya causas importantes y realiza donaciones transparentes."
   }
 }
+{
+  "PlatformAdmin": {
+    "title": "Administración de la plataforma",
+    "description": "Gestiona las solicitudes y aprobaciones de ONG.",
+    "applications": "Solicitudes",
+    "pending": "Pendientes",
+    "approved": "Aprobadas",
+    "rejected": "Rechazadas",
+    "revoked": "Revocadas",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "revoke": "Revocar",
+    "refresh": "Actualizar",
+    "loading": "Cargando solicitudes...",
+    "empty": "No se encontraron solicitudes.",
+    "emptyPending": "No hay solicitudes pendientes.",
+    "error": "No se pudieron cargar las solicitudes.",
+    "applicant": "Solicitante",
+    "organization": "Organización",
+    "email": "Correo electrónico",
+    "submittedAt": "Enviada",
+    "status": "Estado",
+    "actions": "Acciones",
+    "approveDialog": {
+      "title": "Aprobar solicitud",
+      "description": "¿Estás seguro de que deseas aprobar esta solicitud?",
+      "confirm": "Aprobar solicitud",
+      "cancel": "Cancelar"
+    },
+    "rejectDialog": {
+      "title": "Rechazar solicitud",
+      "description": "¿Estás seguro de que deseas rechazar esta solicitud?",
+      "confirm": "Rechazar solicitud",
+      "cancel": "Cancelar"
+    },
+    "revokeDialog": {
+      "title": "Revocar aprobación",
+      "description": "¿Estás seguro de que deseas revocar la aprobación de esta organización?",
+      "confirm": "Revocar aprobación",
+      "cancel": "Cancelar"
+    },
+    "success": {
+      "approved": "Solicitud aprobada correctamente.",
+      "rejected": "Solicitud rechazada correctamente.",
+      "revoked": "Aprobación revocada correctamente."
+    },
+    "failure": {
+      "approve": "No se pudo aprobar la solicitud.",
+      "reject": "No se pudo rechazar la solicitud.",
+      "revoke": "No se pudo revocar la aprobación."
+    }
+  }
+}
+{
+  "NgoAdmin": {
+    "withdrawals": {
+      "title": "Retiros",
+      "loading": "Cargando retiros...",
+      "empty": "Todavía no hay retiros.",
+      "error": "No se pudieron cargar los retiros.",
+      "status": "Estado",
+      "amount": "Cantidad",
+      "date": "Fecha",
+      "actions": "Acciones"
+    },
+    "embed": {
+      "title": "Inserta tu transmisión",
+      "description": "Utiliza el fragmento siguiente para insertar tu transmisión de donaciones.",
+      "instructions": "Copia y pega este código en tu sitio web.",
+      "copy": "Copiar fragmento",
+      "copied": "¡Fragmento copiado!",
+      "copyError": "No se pudo copiar el fragmento."
+    },
+    "streams": {
+      "title": "Tus transmisiones",
+      "loading": "Cargando transmisiones...",
+      "empty": "Todavía no has creado ninguna transmisión.",
+      "error": "No se pudieron cargar las transmisiones.",
+      "status": "Estado",
+      "amount": "Cantidad",
+      "recipient": "Destinatario",
+      "actions": "Acciones"
+    }
+  }
+}
