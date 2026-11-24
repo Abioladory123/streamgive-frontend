@@ -21,6 +21,8 @@ const POLL_INTERVAL_MS = 20_000;
 export default function ImpactPage() {
   const [impact, setImpact] = useState<PlatformImpact | null>(null);
   const [loadError, setLoadError] = useState(false);
+  // Time of the last successful load, shown if a later refresh fails.
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   // Incrementing this triggers the effect to remount and retry immediately.
   const [retryCount, setRetryCount] = useState(0);
 
@@ -39,6 +41,7 @@ export default function ImpactPage() {
         .then((next) => {
           if (!cancelled) {
             setImpact(next);
+            setLastUpdated(new Date());
             setLoadError(false);
           }
         })
@@ -91,7 +94,8 @@ export default function ImpactPage() {
             the next successful poll clears the notice. */}
         {loadError && impact && (
           <p role="status" className="mt-8 text-sm text-amber-700 dark:text-amber-400">
-            Couldn&apos;t refresh — showing the last numbers we loaded.
+            Couldn&apos;t refresh — showing the last numbers we loaded
+            {lastUpdated ? ` (last updated ${lastUpdated.toLocaleTimeString()})` : ''}.
           </p>
         )}
 
