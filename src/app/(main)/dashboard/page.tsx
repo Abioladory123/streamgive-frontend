@@ -470,7 +470,7 @@ export default function DashboardPage() {
                 {visibleStreams.map((stream) => (
                   <li
                     key={stream.id}
-                    className="rounded-lg border border-gray-200 p-6 dark:border-gray-800"
+                    className="stream-card rounded-lg border border-gray-200 p-6 dark:border-gray-800"
                   >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>

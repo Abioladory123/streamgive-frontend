@@ -50,3 +50,34 @@ html.light {
     animation: none;
   }
 }
+
+/* Print layout (issue #452): hide navigation and actions, print black on
+ * white, and keep each stream card on a single page. */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  header,
+  footer,
+  nav,
+  button,
+  select,
+  input,
+  .route-progress-bar {
+    display: none !important;
+  }
+
+  main * {
+    background: transparent !important;
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+
+  .stream-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
