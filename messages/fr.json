@@ -60,7 +60,8 @@
     "toggleTheme": "Changer de thème",
     "switchToDark": "Passer en mode sombre",
     "switchToSystem": "Utiliser le thème du système",
-    "switchToLight": "Passer en mode clair"
+    "switchToLight": "Passer en mode clair",
+    "highContrast": "Contraste élevé"
   },
   "Dashboard": {
     "heading": "Vos dons",

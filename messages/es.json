@@ -61,7 +61,8 @@
     "toggleTheme": "Cambiar tema",
     "switchToDark": "Cambiar al modo oscuro",
     "switchToSystem": "Usar el tema del sistema",
-    "switchToLight": "Cambiar al modo claro"
+    "switchToLight": "Cambiar al modo claro",
+    "highContrast": "Alto contraste"
   },
   "Dashboard": {
     "heading": "Tus donaciones",
