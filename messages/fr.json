@@ -175,7 +175,16 @@
     "streams": "Flux",
     "donors": "Donateurs",
     "viewProfile": "Voir le profil",
-    "loadMore": "Afficher plus"
+    "loadMore": "Afficher plus",
+    "compare": "Comparer",
+    "removeFromCompare": "Retirer de la comparaison",
+    "compareLimit": "Vous pouvez comparer jusqu'à trois ONG.",
+    "openCompare": "Comparer {count} ONG",
+    "compareHeading": "Comparer des ONG",
+    "compareEmpty": "Sélectionnez au moins deux ONG à comparer.",
+    "compareBack": "Retour à l'explorateur",
+    "verification": "Vérification",
+    "notVerified": "Non vérifiée"
   },
   "Apply": {
     "heading": "Déposer une demande en tant qu'ONG",

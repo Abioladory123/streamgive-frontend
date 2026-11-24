@@ -176,7 +176,16 @@
     "streams": "Flujos",
     "donors": "Donantes",
     "viewProfile": "Ver perfil",
-    "loadMore": "Cargar más"
+    "loadMore": "Cargar más",
+    "compare": "Comparar",
+    "removeFromCompare": "Quitar de la comparación",
+    "compareLimit": "Puedes comparar hasta tres ONG.",
+    "openCompare": "Comparar {count} ONG",
+    "compareHeading": "Comparar ONG",
+    "compareEmpty": "Selecciona al menos dos ONG para comparar.",
+    "compareBack": "Volver al explorador",
+    "verification": "Verificación",
+    "notVerified": "No verificada"
   },
   "Apply": {
     "heading": "Postular como ONG",

@@ -12,6 +12,9 @@ import { formatAmount } from '@/lib/format';
 // until the backend exposes real pagination (see backend repo).
 const PAGE_SIZE = 9;
 
+// Up to this many NGOs can be compared side by side.
+const MAX_COMPARE = 3;
+
 type SortOption = 'newest' | 'most-active-streams' | 'most-committed';
 
 function sortNgos(ngos: NgoProfile[], sort: SortOption): NgoProfile[] {
@@ -58,6 +61,14 @@ export function NgoExplorer({ ngos }: { ngos: NgoProfile[] }) {
   const [sortBy, setSortBy] = useState<SortOption>(() => parseSort(searchParams.get('sort')));
 
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [compareIds, setCompareIds] = useState<string[]>([]);
+
+  function toggleCompare(id: string): void {
+    setCompareIds((current) => {
+      if (current.includes(id)) return current.filter((existing) => existing !== id);
+      return current.length >= MAX_COMPARE ? current : [...current, id];
+    });
+  }
 
   // Pressing "/" outside a text field jumps to the search box.
   useEffect(() => {
@@ -180,6 +191,20 @@ export function NgoExplorer({ ngos }: { ngos: NgoProfile[] }) {
         </label>
       </div>
 
+      {compareIds.length > 0 && (
+        <p className="mt-4 flex flex-wrap items-center gap-3 text-sm" role="status">
+          <span className="text-gray-600 dark:text-gray-400">{t('compareLimit')}</span>
+          {compareIds.length >= 2 && (
+            <Link
+              href={`/ngos/compare?ids=${compareIds.map(encodeURIComponent).join(',')}`}
+              className="font-medium underline"
+            >
+              {t('openCompare', { count: compareIds.length })}
+            </Link>
+          )}
+        </p>
+      )}
+
       {filteredNgos.length === 0 ? (
         <p className="mt-8 text-gray-600 dark:text-gray-400">
           {t('noSearchResults', { query: searchQuery.trim() })}
@@ -222,6 +247,15 @@ export function NgoExplorer({ ngos }: { ngos: NgoProfile[] }) {
                   {t('viewProfile')}
                 </span>
               </Link>
+              <button
+                type="button"
+                aria-pressed={compareIds.includes(ngo.id)}
+                disabled={!compareIds.includes(ngo.id) && compareIds.length >= MAX_COMPARE}
+                onClick={() => toggleCompare(ngo.id)}
+                className="mt-2 rounded-md border border-gray-300 px-3 py-1 text-sm font-medium hover:bg-gray-50 disabled:opacity-50 dark:border-gray-700 dark:hover:bg-gray-800"
+              >
+                {compareIds.includes(ngo.id) ? t('removeFromCompare') : t('compare')}
+              </button>
             </li>
           ))}
         </ul>

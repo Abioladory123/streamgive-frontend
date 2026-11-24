@@ -176,7 +176,16 @@
     "streams": "Streams",
     "donors": "Donors",
     "viewProfile": "View profile",
-    "loadMore": "Load more"
+    "loadMore": "Load more",
+    "compare": "Compare",
+    "removeFromCompare": "Remove from compare",
+    "compareLimit": "You can compare up to three NGOs.",
+    "openCompare": "Compare {count} NGOs",
+    "compareHeading": "Compare NGOs",
+    "compareEmpty": "Select at least two NGOs to compare.",
+    "compareBack": "Back to explorer",
+    "verification": "Verification",
+    "notVerified": "Not verified"
   },
   "Apply": {
     "heading": "Apply as an NGO",
