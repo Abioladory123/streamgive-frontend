@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useId, useState } from 'react';
 
 import { ConnectWalletPrompt } from '@/components/common/ConnectWalletPrompt';
 import { StreamControls } from '@/components/dashboard/StreamControls';
@@ -27,6 +27,8 @@ function LiveBalance({ stream }: { stream: Stream }) {
   const t = useTranslations('Dashboard');
   // All rows share one clock instead of each starting its own timer.
   const now = useSharedClock();
+  const [helpOpen, setHelpOpen] = useState(false);
+  const helpId = useId();
 
   if (stream.status !== 'ACTIVE') {
     return <>{formatTokenAmount(stream.balance, stream.tokenAddress)}</>;
@@ -43,8 +45,30 @@ function LiveBalance({ stream }: { stream: Stream }) {
   }
 
   return (
-    <span title={t('estimatedBalanceHelp')} className="border-b border-dotted border-gray-400 cursor-help">
-      {formatTokenAmount(estimatedBalance.toString(), stream.tokenAddress)} {t('estimated')}
+    <span className="inline-flex flex-wrap items-center gap-1">
+      <span>
+        {formatTokenAmount(estimatedBalance.toString(), stream.tokenAddress)} {t('estimated')}
+      </span>
+      <button
+        type="button"
+        aria-label={t('estimatedBalanceHelp')}
+        aria-expanded={helpOpen}
+        aria-controls={helpId}
+        onClick={() => setHelpOpen((open) => !open)}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            setHelpOpen(false);
+          }
+        }}
+        className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gray-400 text-xs leading-none"
+      >
+        i
+      </button>
+      {helpOpen && (
+        <span id={helpId} role="note" className="block w-full text-xs text-gray-600 dark:text-gray-400">
+          {t('estimatedBalanceHelp')}
+        </span>
+      )}
     </span>
   );
 }
