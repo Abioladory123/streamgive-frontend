@@ -14,6 +14,20 @@ vi.mock('@/components/wallet/WalletProvider', () => ({
   }),
 }));
 
+vi.mock('next-intl/server', async () => {
+  const { createTranslator } = await vi.importActual<typeof import('next-intl')>('next-intl');
+  const { default: messages } = await import('../../../../../../../messages/en.json');
+
+  return {
+    getTranslations: async () =>
+      createTranslator({
+        locale: 'en',
+        messages: { DonateSuccess: messages.DonateSuccess },
+        namespace: 'DonateSuccess',
+      }),
+  };
+});
+
 vi.mock('next/navigation', () => ({
   usePathname: () => '/ngos/ngo-1/donate/success',
 }));
