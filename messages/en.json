@@ -447,5 +447,24 @@
     "activeStreams": "Active streams",
     "verifiedNgos": "Verified NGOs",
     "loading": "Loading platform stats…"
+  },
+  "CopyAddressButton": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "failed": "Copy failed",
+    "ariaLabel": "Copy address {address}",
+    "announceCopied": "Address copied to clipboard.",
+    "announceFailed": "Could not copy the address. Copy it manually instead."
+  },
+  "CopyLinkButton": {
+    "copy": "Copy link",
+    "copied": "Link copied!",
+    "failed": "Copy failed",
+    "announceCopied": "Link copied to clipboard.",
+    "announceFailed": "Could not copy the link. Copy it from the address bar instead."
+  },
+  "DonateQrCode": {
+    "ariaLabel": "QR code linking to {ngoName}'s donate page",
+    "download": "Download"
   }
 }

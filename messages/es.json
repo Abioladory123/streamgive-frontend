@@ -447,5 +447,24 @@
     "activeStreams": "Flujos activos",
     "verifiedNgos": "ONG verificadas",
     "loading": "Cargando estadísticas de la plataforma…"
+  },
+  "CopyAddressButton": {
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "failed": "Error al copiar",
+    "ariaLabel": "Copiar dirección {address}",
+    "announceCopied": "Dirección copiada al portapapeles.",
+    "announceFailed": "No se pudo copiar la dirección. Cópiala manualmente."
+  },
+  "CopyLinkButton": {
+    "copy": "Copiar enlace",
+    "copied": "¡Enlace copiado!",
+    "failed": "Error al copiar",
+    "announceCopied": "Enlace copiado al portapapeles.",
+    "announceFailed": "No se pudo copiar el enlace. Cópialo desde la barra de direcciones."
+  },
+  "DonateQrCode": {
+    "ariaLabel": "Código QR que enlaza a la página de donación de {ngoName}",
+    "download": "Descargar"
   }
 }
