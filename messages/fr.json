@@ -292,6 +292,19 @@
     "contractError9": "Ce jeton n'est pas accepté par le coffre de dons.",
     "contractError10": "Le solde de votre portefeuille est trop faible pour couvrir ce dépôt."
   },
+  "DonateSuccess": {
+    "metaTitle": "Flux démarré — {ngoName}",
+    "metaTitleNotFound": "ONG introuvable",
+    "loadError": "Impossible de charger cette page. Vérifiez votre connexion et réessayez.",
+    "retry": "Réessayer",
+    "streamStarted": "Flux démarré !",
+    "activeWithId": "Le flux n° {streamId} est actif et alimente {ngoName}.",
+    "active": "Votre flux vers {ngoName} est maintenant actif.",
+    "shareHeading": "Vous connaissez quelqu'un d'autre qui voudrait aider ?",
+    "shareBody": "Partagez le profil de {ngoName} pour que d'autres démarrent leur propre flux.",
+    "viewProfile": "Voir le profil de {ngoName}",
+    "seeAllStreams": "Voir tous vos flux"
+  },
   "Metadata": {
     "title": "StreamGive — Des dons transparents pour les ONG",
     "description": "Soutenez des ONG de confiance et contribuez à un impact positif grâce à des dons transparents.",

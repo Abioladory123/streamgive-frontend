@@ -293,6 +293,19 @@
     "contractError9": "This token isn't accepted by the donation vault.",
     "contractError10": "Your wallet balance is too low to cover this deposit."
   },
+  "DonateSuccess": {
+    "metaTitle": "Stream started — {ngoName}",
+    "metaTitleNotFound": "NGO not found",
+    "loadError": "Couldn't load this page. Please check your connection and try again.",
+    "retry": "Retry",
+    "streamStarted": "Stream started!",
+    "activeWithId": "Stream #{streamId} is now active, streaming to {ngoName}.",
+    "active": "Your stream to {ngoName} is now active.",
+    "shareHeading": "Know someone else who'd want to help?",
+    "shareBody": "Share {ngoName}'s profile so others can start their own stream.",
+    "viewProfile": "View {ngoName}'s profile",
+    "seeAllStreams": "See all your streams"
+  },
   "Metadata": {
     "title": "StreamGive — Transparent Donations for NGOs",
     "description": "Support trusted NGOs and make a meaningful impact through transparent donations.",

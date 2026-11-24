@@ -293,6 +293,19 @@
     "contractError9": "El contrato de donaciones no acepta este token.",
     "contractError10": "El saldo de tu billetera es insuficiente para cubrir este depósito."
   },
+  "DonateSuccess": {
+    "metaTitle": "Flujo iniciado — {ngoName}",
+    "metaTitleNotFound": "ONG no encontrada",
+    "loadError": "No se pudo cargar esta página. Revisa tu conexión e inténtalo de nuevo.",
+    "retry": "Reintentar",
+    "streamStarted": "¡Flujo iniciado!",
+    "activeWithId": "El flujo #{streamId} ya está activo y fluye hacia {ngoName}.",
+    "active": "Tu flujo hacia {ngoName} ya está activo.",
+    "shareHeading": "¿Conoces a alguien más que quisiera ayudar?",
+    "shareBody": "Comparte el perfil de {ngoName} para que otros inicien su propio flujo.",
+    "viewProfile": "Ver el perfil de {ngoName}",
+    "seeAllStreams": "Ver todos tus flujos"
+  },
   "Metadata": {
     "title": "StreamGive — Donaciones transparentes para ONG",
     "description": "Apoya a organizaciones confiables y genera un impacto significativo mediante donaciones transparentes.",
