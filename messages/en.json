@@ -441,5 +441,11 @@
         "answer": "Connect your wallet and submit the form on the Apply page. You register on-chain with your own wallet first. Once the platform admin approves your application, your NGO appears in the explorer."
       }
     ]
+  },
+  "StatsStrip": {
+    "totalCommitted": "Total committed",
+    "activeStreams": "Active streams",
+    "verifiedNgos": "Verified NGOs",
+    "loading": "Loading platform stats…"
   }
 }

@@ -321,5 +321,11 @@
     "description": "Soutenez des ONG de confiance et contribuez à un impact positif grâce à des dons transparents.",
     "ogTitle": "StreamGive — Donnez en toute transparence, agissez concrètement",
     "ogDescription": "Découvrez des ONG, soutenez des causes importantes et faites des dons en toute transparence."
+  },
+  "StatsStrip": {
+    "totalCommitted": "Total engagé",
+    "activeStreams": "Flux actifs",
+    "verifiedNgos": "ONG vérifiées",
+    "loading": "Chargement des statistiques de la plateforme…"
   }
 }

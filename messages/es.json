@@ -441,5 +441,11 @@
         "answer": "Conecta tu billetera y envía el formulario de la página de solicitud. Primero te registras en la cadena con tu propia billetera. Cuando el administrador de la plataforma aprueba tu solicitud, tu ONG aparece en el explorador."
       }
     ]
+  },
+  "StatsStrip": {
+    "totalCommitted": "Total comprometido",
+    "activeStreams": "Flujos activos",
+    "verifiedNgos": "ONG verificadas",
+    "loading": "Cargando estadísticas de la plataforma…"
   }
 }
