@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { NgoProfile } from '@/lib/api';
 import { formatAmount } from '@/lib/format';
@@ -56,6 +56,29 @@ export function NgoExplorer({ ngos }: { ngos: NgoProfile[] }) {
   const [searchQuery, setSearchQuery] = useState(() => searchParams.get('q') ?? '');
   const [page, setPage] = useState(() => parsePage(searchParams.get('page')));
   const [sortBy, setSortBy] = useState<SortOption>(() => parseSort(searchParams.get('sort')));
+
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Pressing "/" outside a text field jumps to the search box.
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent): void {
+      if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.tagName === 'SELECT' ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      event.preventDefault();
+      searchInputRef.current?.focus();
+    }
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const queryString = searchParams.toString();
 
@@ -135,6 +158,7 @@ export function NgoExplorer({ ngos }: { ngos: NgoProfile[] }) {
         <label className="block flex-1 min-w-[200px] max-w-sm">
           <span className="sr-only">{t('searchLabel')}</span>
           <input
+            ref={searchInputRef}
             type="search"
             value={searchQuery}
             onChange={(event) => handleSearchChange(event.target.value)}

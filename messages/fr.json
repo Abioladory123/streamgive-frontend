@@ -164,7 +164,7 @@
     "retry": "Réessayer",
     "noVerifiedNgos": "Aucune ONG vérifiée pour le moment.",
     "searchLabel": "Rechercher des ONG par nom",
-    "searchPlaceholder": "Rechercher une ONG…",
+    "searchPlaceholder": "Rechercher une ONG… (touche /)",
     "sortLabel": "Trier les ONG",
     "newest": "Les plus récentes",
     "mostActiveStreams": "Flux les plus actifs",

@@ -165,7 +165,7 @@
     "retry": "Retry",
     "noVerifiedNgos": "No verified NGOs yet.",
     "searchLabel": "Search NGOs by name",
-    "searchPlaceholder": "Search NGOs by name…",
+    "searchPlaceholder": "Search NGOs by name… (press /)",
     "sortLabel": "Sort NGOs",
     "newest": "Newest",
     "mostActiveStreams": "Most active streams",
