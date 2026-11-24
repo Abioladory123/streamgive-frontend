@@ -89,6 +89,8 @@
     "endingSoonest": "Ending soonest",
     "searchLabel": "Search by on-chain stream ID",
     "searchPlaceholder": "Search by stream ID…",
+    "scheduled": "Scheduled",
+    "startsOn": "Starts on {date}",
     "noSearchResults": "No streams match stream ID \"{query}\".",
     "noStreams": "No streams found.",
     "noActiveStreams": "No active streams found.",

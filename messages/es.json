@@ -89,6 +89,8 @@
     "endingSoonest": "Próximos a terminar",
     "searchLabel": "Buscar por ID de flujo en cadena",
     "searchPlaceholder": "Buscar por ID de flujo…",
+    "scheduled": "Programado",
+    "startsOn": "Comienza el {date}",
     "noSearchResults": "Ningún flujo coincide con el ID \"{query}\".",
     "noStreams": "No se encontraron flujos.",
     "noActiveStreams": "No se encontraron flujos activos.",

@@ -133,6 +133,8 @@ export type Stream = {
   status: 'ACTIVE' | 'CANCELLED';
   createdAt: string;
   updatedAt: string;
+  /** Optional start time of a stream created with a delayed start. */
+  startsAt?: string;
   donor: { address: string };
   ngo: { id: string; name: string; ownerAddress: string };
 };

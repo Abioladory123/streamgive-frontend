@@ -88,6 +88,8 @@
     "endingSoonest": "Se terminant le plus tôt",
     "searchLabel": "Rechercher par identifiant de flux on-chain",
     "searchPlaceholder": "Rechercher par identifiant de flux…",
+    "scheduled": "Planifié",
+    "startsOn": "Commence le {date}",
     "noSearchResults": "Aucun flux ne correspond à l'identifiant « {query} ».",
     "noStreams": "Aucun flux trouvé.",
     "noActiveStreams": "Aucun flux actif trouvé.",
