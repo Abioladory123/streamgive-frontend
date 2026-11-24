@@ -466,5 +466,8 @@
   "DonateQrCode": {
     "ariaLabel": "Código QR que enlaza a la página de donación de {ngoName}",
     "download": "Descargar"
+  },
+  "EnvironmentBanner": {
+    "message": "Modo {network}: las transacciones usan fondos de prueba, no dinero real."
   }
 }
