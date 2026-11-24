@@ -34,9 +34,25 @@ function LiveBalance({ stream }: { stream: Stream }) {
     return <>{formatTokenAmount(stream.balance, stream.tokenAddress)}</>;
   }
 
+  const startsAt = stream.startsAt ? new Date(stream.startsAt).getTime() : 0;
+  if (startsAt > 0 && now > 0 && now < startsAt) {
+    return (
+      <span className="inline-flex flex-wrap items-center gap-1">
+        <span>{formatTokenAmount(stream.balance, stream.tokenAddress)}</span>
+        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-300">
+          {t('scheduled')}
+        </span>
+        <span className="text-xs text-gray-600 dark:text-gray-400">
+          {t('startsOn', { date: new Date(startsAt).toLocaleString() })}
+        </span>
+      </span>
+    );
+  }
+
   let estimatedBalance = BigInt(stream.balance);
   if (now > 0) {
-    const updatedAt = new Date(stream.updatedAt).getTime();
+    // The live balance only begins accruing once the stream has started.
+    const updatedAt = Math.max(new Date(stream.updatedAt).getTime(), startsAt);
     const secondsSince = BigInt(Math.max(0, Math.floor((now - updatedAt) / 1000)));
     estimatedBalance = estimatedBalance - BigInt(stream.rate) * secondsSince;
     if (estimatedBalance < 0n) {
@@ -454,7 +470,7 @@ export default function DashboardPage() {
                 {visibleStreams.map((stream) => (
                   <li
                     key={stream.id}
-                    className="rounded-lg border border-gray-200 p-6 dark:border-gray-800"
+                    className="stream-card rounded-lg border border-gray-200 p-6 dark:border-gray-800"
                   >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
