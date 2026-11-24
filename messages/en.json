@@ -45,6 +45,7 @@
     "contact": "Contact",
     "privacy": "Privacy",
     "terms": "Terms",
+    "accessibility": "Accessibility",
     "newTabCue": "(opens in a new tab)"
   },
   "WalletButton": {
@@ -61,7 +62,8 @@
     "toggleTheme": "Toggle theme",
     "switchToDark": "Switch to dark mode",
     "switchToSystem": "Switch to system mode",
-    "switchToLight": "Switch to light mode"
+    "switchToLight": "Switch to light mode",
+    "highContrast": "High contrast"
   },
   "Dashboard": {
     "heading": "Your donations",

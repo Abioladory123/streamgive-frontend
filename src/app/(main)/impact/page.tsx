@@ -57,13 +57,42 @@ export default function ImpactPage() {
     }
 
     let activeController = refresh();
-    const interval = setInterval(() => {
-      activeController = refresh();
-    }, POLL_INTERVAL_MS);
+    let interval: ReturnType<typeof setInterval> | undefined;
+
+    function startPolling() {
+      stopPolling();
+      interval = setInterval(() => {
+        activeController = refresh();
+      }, POLL_INTERVAL_MS);
+    }
+
+    function stopPolling() {
+      if (interval !== undefined) {
+        clearInterval(interval);
+        interval = undefined;
+      }
+    }
+
+    // Pause the interval while the tab is hidden and catch up with one
+    // fetch as soon as it becomes visible again.
+    function handleVisibilityChange() {
+      if (document.visibilityState === 'visible') {
+        activeController = refresh();
+        startPolling();
+      } else {
+        stopPolling();
+      }
+    }
+
+    if (document.visibilityState === 'visible') {
+      startPolling();
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       cancelled = true;
-      clearInterval(interval);
+      stopPolling();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       activeController.abort();
     };
   }, [retryCount]);
