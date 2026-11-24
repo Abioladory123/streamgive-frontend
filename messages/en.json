@@ -441,5 +441,41 @@
         "answer": "Connect your wallet and submit the form on the Apply page. You register on-chain with your own wallet first. Once the platform admin approves your application, your NGO appears in the explorer."
       }
     ]
+  },
+  "StatsStrip": {
+    "totalCommitted": "Total committed",
+    "activeStreams": "Active streams",
+    "verifiedNgos": "Verified NGOs",
+    "loading": "Loading platform stats…"
+  },
+  "CopyAddressButton": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "failed": "Copy failed",
+    "ariaLabel": "Copy address {address}",
+    "announceCopied": "Address copied to clipboard.",
+    "announceFailed": "Could not copy the address. Copy it manually instead."
+  },
+  "CopyLinkButton": {
+    "copy": "Copy link",
+    "copied": "Link copied!",
+    "failed": "Copy failed",
+    "announceCopied": "Link copied to clipboard.",
+    "announceFailed": "Could not copy the link. Copy it from the address bar instead."
+  },
+  "DonateQrCode": {
+    "ariaLabel": "QR code linking to {ngoName}'s donate page",
+    "download": "Download"
+  },
+  "EnvironmentBanner": {
+    "message": "{network} mode: transactions use test funds, not real money."
+  },
+  "EmbedWidget": {
+    "donateTitle": "Donate to {ngoName}",
+    "notFoundTitle": "NGO not found",
+    "loadError": "Couldn't load the donation form. Please try refreshing the page.",
+    "notVerified": "{ngoName} is not yet verified and cannot receive streams at this time.",
+    "heading": "Give to {ngoName}",
+    "poweredBy": "Powered by StreamGive"
   }
 }

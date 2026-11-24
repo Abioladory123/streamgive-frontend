@@ -441,5 +441,41 @@
         "answer": "Conecta tu billetera y envía el formulario de la página de solicitud. Primero te registras en la cadena con tu propia billetera. Cuando el administrador de la plataforma aprueba tu solicitud, tu ONG aparece en el explorador."
       }
     ]
+  },
+  "StatsStrip": {
+    "totalCommitted": "Total comprometido",
+    "activeStreams": "Flujos activos",
+    "verifiedNgos": "ONG verificadas",
+    "loading": "Cargando estadísticas de la plataforma…"
+  },
+  "CopyAddressButton": {
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "failed": "Error al copiar",
+    "ariaLabel": "Copiar dirección {address}",
+    "announceCopied": "Dirección copiada al portapapeles.",
+    "announceFailed": "No se pudo copiar la dirección. Cópiala manualmente."
+  },
+  "CopyLinkButton": {
+    "copy": "Copiar enlace",
+    "copied": "¡Enlace copiado!",
+    "failed": "Error al copiar",
+    "announceCopied": "Enlace copiado al portapapeles.",
+    "announceFailed": "No se pudo copiar el enlace. Cópialo desde la barra de direcciones."
+  },
+  "DonateQrCode": {
+    "ariaLabel": "Código QR que enlaza a la página de donación de {ngoName}",
+    "download": "Descargar"
+  },
+  "EnvironmentBanner": {
+    "message": "Modo {network}: las transacciones usan fondos de prueba, no dinero real."
+  },
+  "EmbedWidget": {
+    "donateTitle": "Donar a {ngoName}",
+    "notFoundTitle": "ONG no encontrada",
+    "loadError": "No se pudo cargar el formulario de donación. Actualiza la página e inténtalo de nuevo.",
+    "notVerified": "{ngoName} aún no está verificada y no puede recibir flujos por el momento.",
+    "heading": "Dona a {ngoName}",
+    "poweredBy": "Con tecnología de StreamGive"
   }
 }
