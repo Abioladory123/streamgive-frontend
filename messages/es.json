@@ -469,5 +469,13 @@
   },
   "EnvironmentBanner": {
     "message": "Modo {network}: las transacciones usan fondos de prueba, no dinero real."
+  },
+  "EmbedWidget": {
+    "donateTitle": "Donar a {ngoName}",
+    "notFoundTitle": "ONG no encontrada",
+    "loadError": "No se pudo cargar el formulario de donación. Actualiza la página e inténtalo de nuevo.",
+    "notVerified": "{ngoName} aún no está verificada y no puede recibir flujos por el momento.",
+    "heading": "Dona a {ngoName}",
+    "poweredBy": "Con tecnología de StreamGive"
   }
 }

@@ -469,5 +469,13 @@
   },
   "EnvironmentBanner": {
     "message": "{network} mode: transactions use test funds, not real money."
+  },
+  "EmbedWidget": {
+    "donateTitle": "Donate to {ngoName}",
+    "notFoundTitle": "NGO not found",
+    "loadError": "Couldn't load the donation form. Please try refreshing the page.",
+    "notVerified": "{ngoName} is not yet verified and cannot receive streams at this time.",
+    "heading": "Give to {ngoName}",
+    "poweredBy": "Powered by StreamGive"
   }
 }
