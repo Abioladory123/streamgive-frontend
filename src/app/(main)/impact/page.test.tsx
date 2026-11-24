@@ -217,3 +217,38 @@ describe('ImpactPage error recovery', () => {
     expect(load).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('ImpactPage hidden tab polling (issue #438)', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.mocked(loadPlatformImpact).mockReset();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.restoreAllMocks();
+  });
+
+  function setVisibility(state: 'visible' | 'hidden') {
+    Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => state });
+    document.dispatchEvent(new Event('visibilitychange'));
+  }
+
+  it('pauses polling while hidden and fetches once when visible again', async () => {
+    vi.mocked(loadPlatformImpact).mockResolvedValue(IMPACT);
+
+    renderWithIntl(<ImpactPage />);
+    await vi.waitFor(() => expect(loadPlatformImpact).toHaveBeenCalledTimes(1));
+
+    setVisibility('hidden');
+    await vi.advanceTimersByTimeAsync(5 * POLL_INTERVAL_MS);
+    expect(loadPlatformImpact).toHaveBeenCalledTimes(1);
+
+    setVisibility('visible');
+    await vi.advanceTimersByTimeAsync(0);
+    expect(loadPlatformImpact).toHaveBeenCalledTimes(2);
+
+    await vi.advanceTimersByTimeAsync(POLL_INTERVAL_MS);
+    expect(loadPlatformImpact).toHaveBeenCalledTimes(3);
+  });
+});
