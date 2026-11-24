@@ -12,6 +12,7 @@ import { getStreams, type Stream } from '@/lib/api';
 import { buildDonationHistoryCsv } from '@/lib/csv';
 import { formatTokenAmount, formatTokenTotals } from '@/lib/format';
 import { useLatestRequest } from '@/lib/useLatestRequest';
+import { useSharedClock } from '@/lib/useSharedClock';
 
 // Client-side pagination over the already-fetched list — same interim
 // approach as NgoExplorer, until the backend exposes real limit/offset
@@ -24,36 +25,21 @@ const POLL_INTERVAL_MS = 30_000;
 
 function LiveBalance({ stream }: { stream: Stream }) {
   const t = useTranslations('Dashboard');
-  const [estimatedBalance, setEstimatedBalance] = useState<bigint>(BigInt(stream.balance));
-
-  useEffect(() => {
-    if (stream.status !== 'ACTIVE') {
-      return;
-    }
-
-    const balance = BigInt(stream.balance);
-    const rate = BigInt(stream.rate);
-    const updatedAt = new Date(stream.updatedAt).getTime();
-
-    const tick = () => {
-      const now = Date.now();
-      const secondsSince = BigInt(Math.floor((now - updatedAt) / 1000));
-      let current = balance - rate * secondsSince;
-      if (current < 0n) {
-        current = 0n;
-      }
-      setEstimatedBalance(current);
-    };
-
-    // Prime the clock subscription immediately instead of showing an old
-    // balance until the first interval fires after a stream update.
-    tick();
-    const interval = setInterval(tick, 1000);
-    return () => clearInterval(interval);
-  }, [stream.balance, stream.rate, stream.updatedAt, stream.status]);
+  // All rows share one clock instead of each starting its own timer.
+  const now = useSharedClock();
 
   if (stream.status !== 'ACTIVE') {
     return <>{formatTokenAmount(stream.balance, stream.tokenAddress)}</>;
+  }
+
+  let estimatedBalance = BigInt(stream.balance);
+  if (now > 0) {
+    const updatedAt = new Date(stream.updatedAt).getTime();
+    const secondsSince = BigInt(Math.max(0, Math.floor((now - updatedAt) / 1000)));
+    estimatedBalance = estimatedBalance - BigInt(stream.rate) * secondsSince;
+    if (estimatedBalance < 0n) {
+      estimatedBalance = 0n;
+    }
   }
 
   return (
